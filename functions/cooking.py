@@ -1,36 +1,5 @@
 import math
 
-# PROCESSING
-# PROCESSING
-
-def flax_fabric():
-    p_flax = float(input("\nWhat is the price of flax? (0 if using nodes)"))
-    q_flax = float(input("How much flax are you going to process?"))
-    p_flax_fabric = float(input("What is the selling price of flax fabric?"))
-    q_flax = q_flax / 5
-    q_flax_thread = math.floor(q_flax)
-    q_flax_fabric = q_flax_thread / 10
-    q_flax_fabric = math.floor(q_flax_fabric)
-
-    # expenses of all flax bought
-    expenses = q_flax * p_flax
-    profit = p_flax_fabric * math.floor(q_flax_fabric) - expenses
-    print("\nThe minimum amount of money you can make is: " + str(profit))
-
-def cotton_fabric():
-    p_cotton = float(input("\nWhat is the price of cotton? (0 if using nodes)"))
-    q_cotton = float(input("How much cotton are you going to process?"))
-    p_cotton_fabric = float(input("What is the selling price of cotton fabric?"))
-    q_cotton = q_cotton / 5
-    q_cotton_yarn = math.floor(q_cotton)
-    q_cotton_fabric = q_cotton_yarn / 10
-    q_cotton_fabric = math.floor(q_cotton_fabric)
-
-    # expenses of all cotton bought
-    expenses = q_cotton * p_cotton
-    profit = p_cotton_fabric * q_cotton_fabric - expenses
-    print("\nThe minimum amount of money you can make is: " + str(profit))
-
 
 # COOKING
 # COOKING
@@ -169,37 +138,3 @@ def tea_with_fine_scent_product():
     expenses = p_flower + p_fruit + p_c_honey + P_7_MIN_WATER
     profit = q_tea * (p_tea - expenses)
     print("\nThe minimum amount of money you can make is: " + str(profit))
-
-
-print("BDO Profit Calculator")
-print("These profits are not deducting market tax, and are not considering higher skill levels or critical hits "
-      "(i.e. Cold Draft Beer).\n")
-print("What are you going to do?\n1. Process\n2. Cook\n")
-select_task = int(input("(Press 1 or 2)..."))
-
-if select_task == 1:
-    print("What would you like to process?\n1. Cotton\n2. Flax")
-    task = int(input("(Press 1 or 2)..."))
-    if task == 1:
-        cotton_fabric()
-    elif task == 2:
-        flax_fabric()
-    else:
-        int(input("Please press 1 or 2..."))
-elif select_task == 2:
-    print("What would you like to cook?")
-    task = int(input("1. Aloe Yogurt\n2. Beer (grain based)\n3. Fruit Wine\n4. Tea with Fine Scent (quantity - "
-                     "fruit/flower based)\n5. Tea with Fine Scent (quantity - product based)\n"
-                     "6. Milk Tea"))
-    if task == 1:
-        aloe_yogurt()
-    elif task == 2:
-        beer()
-    elif task == 3:
-        fruit_wine()
-    elif task == 4:
-        tea_with_fine_scent_ingredients()
-    elif task == 5:
-        tea_with_fine_scent_product()
-    elif task == 6:
-        milk_tea()
